@@ -1,0 +1,22 @@
+<p>
+  <strong>Name:</strong>
+  <%= @task.name %>
+</p>
+
+<p>
+  <strong>Due:</strong>
+  <%= @task.due.to_s(:long) %>
+</p>
+
+<p>
+  <strong>Level:</strong>
+  <%= @task.level %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @task.user %>
+</p>
+
+<%= link_to 'Edit', edit_task_path(@task) %> |
+<%= link_to 'Back', tasks_path %>

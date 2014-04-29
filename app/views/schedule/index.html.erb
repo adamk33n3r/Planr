@@ -1,0 +1,15 @@
+<%= calendar_for(@tasks, html: {class:"no-foundation", id:"calendar"}) do |calendar| %>
+  <%= calendar.head('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday') %>
+  <%= calendar.day(day_method: :due) do |date, tasks| %>
+    <div class="date"><%= date.day %></div>
+    <ul class="tasks unstyled">
+      <% tasks.each do |task| %>
+        <li>
+          <%= link_to task do %>
+          <%= h(task.name) %><span class="right">(<%= task.level %>)</span>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+<% end %>

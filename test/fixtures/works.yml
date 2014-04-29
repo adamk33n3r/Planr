@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  due: 2014-04-28 06:40:37
+  level: 1
+  user_id: 
+
+two:
+  name: MyString
+  due: 2014-04-28 06:40:37
+  level: 1
+  user_id: 
