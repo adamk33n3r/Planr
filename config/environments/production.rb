@@ -1,4 +1,4 @@
-WorkSpread::Application.configure do
+Planr::Application.configure do
   
   config.assets.precompile += %w( vendor/modernizr.js )
   # Settings specified here will take precedence over those in config/application.rb.

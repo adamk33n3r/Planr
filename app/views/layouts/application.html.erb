@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>WorkSpread - <%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+  <title><%= Rails.application.class.to_s.split("::").first %>.io - <%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "vendor/modernizr", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -13,7 +13,7 @@
   <div class="sticky">
     <nav class="top-bar" data-topbar>
       <ul class="title-area">
-        <li class="name"><h1><%= link_to "WorkSpread", root_path %></h1></li>
+        <li class="name"><h1><%= link_to Rails.application.class.to_s.split("::").first+".io", root_path %></h1></li>
         <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
       </ul>
       <section class="top-bar-section">

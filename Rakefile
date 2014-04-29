@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-WorkSpread::Application.load_tasks
+Planr::Application.load_tasks
