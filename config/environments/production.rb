@@ -1,5 +1,5 @@
 Planr::Application.configure do
-  
+  config.action_mailer.default_url_options = { :host => 'planr-io.herokuapp.com' }
   config.assets.precompile += %w( vendor/modernizr.js )
   # Settings specified here will take precedence over those in config/application.rb.
 
