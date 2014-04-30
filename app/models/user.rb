@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   after_create :skip_conf!
 
   def skip_conf!
-    self.confirm! if Rails.env.development?
+    self.confirm! # if Rails.env.development?
   end
   
   def self.from_omniauth(auth)
