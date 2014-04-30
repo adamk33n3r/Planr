@@ -245,7 +245,7 @@ DEPENDENCIES
   omniauth-google-oauth2
   rails (= 4.0.0)
   rails_12factor
-  rspec-rails
+  rspec-rails (~> 2.0)
   sass-rails (~> 4.0.0)
   sdoc
   sqlite3

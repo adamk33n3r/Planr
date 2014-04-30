@@ -15,7 +15,7 @@ group :test do
   gem 'capybara'
 end
 group :development, :test do
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 2.0'
 end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
