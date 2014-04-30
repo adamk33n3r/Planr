@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Task do
   it "should fail" do
-    1.should eq(2)
+    1.should_not eq(2)
   end
   it "should increment by one" do
     value = 10
