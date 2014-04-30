@@ -1,3 +1,4 @@
+![CodeShipBuildStatus](https://www.codeship.io/projects/34d02c00-b24b-0131-139b-12136d63f7c3/status)
 == README
 
 This README would normally document whatever steps are necessary to get the
