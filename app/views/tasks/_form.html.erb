@@ -18,8 +18,10 @@
     </div>
   </div>
   <div class="row">
-    <div class="small-6 columns"><%= label_tag :due_date %><%= text_field_tag :due_date, nil, id: "task_due_date", name: "task[due_date]", placeholder: Date.today.strftime("%m/%d/%Y") %></div>
-    <div class="small-6 columns"><%= label_tag :due_time %><%= text_field_tag :due_time, nil, id: "task_due_time", name: "task[due_time]", placeholder: "2:00pm" %></div>
+    <div class="small-6 columns">
+      <%= label_tag :due_date %><%= text_field_tag :due_date, params[:due_date] ? params[:due_date] : nil, id: "task_due_date", name: "task[due_date]", placeholder: Date.today.strftime("%m/%d/%Y") %></div>
+    <div class="small-6 columns">
+      <%= label_tag :due_time %><%= text_field_tag :due_time, nil, id: "task_due_time", name: "task[due_time]", placeholder: "2:00pm" %></div>
   </div>
   <div class="row">
     <div class="small-12 columns">

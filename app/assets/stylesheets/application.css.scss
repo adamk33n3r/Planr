@@ -12,9 +12,15 @@
  *= require_tree .
  *= stub active_admin
  *= stub scaffolds
+ *= stub _foundation_overrides
  */
+@import "foundation";
+@import "foundation_overrides";
 
-//@import "foundation_and_overrides";
+.io {
+  color: $primary-color;
+}
+
 .th {
   width: 100px;
 }
@@ -24,7 +30,7 @@
 
 #main {
   margin: 0 auto;
-  width: 70%;
+  width: 80%;
   margin-top: 50px;
 }
 
@@ -175,6 +181,7 @@ ul.unstyled, ol.unstyled {
   content: "";
   border-radius: 100%;
 }
+
 @mixin loadingspin($out-size: 50px, $out-band-size: 5px, $in-size: 20px, $in-band-size: 2px) {
   &:before{
     @include spinner($in-size, $in-band-size);
@@ -200,7 +207,7 @@ ul.unstyled, ol.unstyled {
   height: 100%;
   position: fixed;
   left: 0;
-  top: 0;
+  top: 45px;
   background-color: rgba(0,0,0,.6);
   @include loadingspin;
 }

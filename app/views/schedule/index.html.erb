@@ -1,4 +1,12 @@
-<%= calendar_for(@tasks, html: {class:"no-foundation", id:"calendar"}) do |calendar| %>
+<% content_for :title, "Schedule" %>
+<div id="date">
+  <% date_p = @date - 1.month %>
+  <% date_n = @date + 1.month %>
+  <%= blink_to "<<", schedule_filter_path(date_p.year, date_p.month), class: "secondary left" %>
+  <span><%= @date.strftime("%B %Y") %></span>
+  <%= blink_to ">>", schedule_filter_path(date_n.year, date_n.month), class: "secondary right" %>
+</div>
+<%= calendar_for(@tasks, year: @date.year, month: @date.month, html: {class:"no-foundation", id:"calendar"}) do |calendar| %>
   <%= calendar.head('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday') %>
   <%= calendar.day(day_method: :due) do |date, tasks| %>
     <div class="date"><%= date.day %></div>
@@ -6,10 +14,11 @@
       <% tasks.each do |task| %>
         <li>
           <%= link_to task do %>
-          <%= h(task.name) %><span class="right">(<%= task.level %>)</span>
+            <span><%= h(task.name) %><span class="right">(<%= task.level %>)</span></span>
           <% end %>
         </li>
       <% end %>
+      <li><%= link_to "Add new Task +", new_task_path(due_date: date.strftime("%m/%d/%Y")) %></li>
     </ul>
   <% end %>
 <% end %>
