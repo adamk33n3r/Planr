@@ -17,6 +17,10 @@
 @import "foundation";
 @import "foundation_overrides";
 
+body.loading-open {
+  overflow: hidden;
+}
+
 .io {
   color: $primary-color;
 }

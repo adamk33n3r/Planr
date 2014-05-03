@@ -1,13 +1,11 @@
 require 'spec_helper'
 
 describe Task do
-  it "should fail" do
-    1.should_not eq(2)
-  end
-  it "should increment by one" do
-    value = 10
-    value.should eq(10) # This is a necessary pre-condition, not the actual test
-    value += 1
-    value.should eq(11)
+  let(:t) { FactoryGirl.create(:task) }
+  it "Create generic task" do
+    t.name.should eq("Task Name")
+    t.due.should eq("1969-1-1 00:00")
+    t.level.should eq(1)
+    t.should be_valid
   end
 end

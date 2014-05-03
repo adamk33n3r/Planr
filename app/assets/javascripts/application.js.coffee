@@ -19,9 +19,11 @@
 #= require mailcheck.min
 
 $(document).on('page:fetch', ->
-  $(".loading-indicator").show())
+  $(".loading-indicator").show()
+  $("body").addClass("loading-open"))
 $(document).on('page:change', ->
-  $(".loading-indicator").hide())
+  $(".loading-indicator").hide()
+  $("body").removeClass("loading-open"))
 
 
 $ ->

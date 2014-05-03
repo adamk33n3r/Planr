@@ -7,9 +7,13 @@ class User < ActiveRecord::Base
   # attr_accessor :email, :password, :password_confirmation, :remember_me, :username, :provider, :uid, :avatar
   
   after_create :skip_conf!
+  
+  validates :email, format: /@/
+  validates_presence_of :email, :password, :password_confirmation
+  validates_uniqueness_of :email
 
   def skip_conf!
-    self.confirm! # if Rails.env.development?
+    self.skip_confirmation! if Rails.env.development?
   end
   
   def self.from_omniauth(auth)

@@ -51,11 +51,8 @@ table#calendar {
           &:hover {
             background-color: lighten($success-color, 15%);
           }
-          > span {
-            display: inline-block;
-          }
           a {
-            #display: block;
+            display: block;
             color: #222;
           }
           &:first-child {

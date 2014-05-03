@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.1.1'
-gem "watu_table_builder", :require => "table_builder"
+
+gem 'watu_table_builder', :require => 'table_builder'
 gem 'time_zone_ext'
 
 gem 'devise', '3.2'
@@ -14,8 +15,10 @@ gem 'yaml_db', github: 'jetthoughts/yaml_db', ref: 'fb4b6bd7e12de3cffa93e0a298a1
 
 group :test do
   gem 'capybara'
+  gem 'guard-rspec'
 end
 group :development, :test do
+  gem 'factory_girl_rails', '~> 4.0'
   gem 'rspec-rails', '~> 2.0'
 end
 
