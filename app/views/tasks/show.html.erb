@@ -1,23 +1,2 @@
 <% content_for :title, @task.name %>
-<p>
-  <strong>Name:</strong>
-  <%= @task.name %>
-</p>
-
-<p>
-  <strong>Due:</strong>
-  <%= @task.due.to_s(:long) %>
-</p>
-
-<p>
-  <strong>Level:</strong>
-  <%= @task.level %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @task.user %>
-</p>
-
-<%= link_to 'Edit', edit_task_path(@task) %> |
-<%= link_to 'Back', tasks_path %>
+<form method="get" data-abide><label for="time">Time</label><input id="time" type="time"><button type="submit"/></form>

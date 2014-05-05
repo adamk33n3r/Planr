@@ -14,7 +14,7 @@
       <% tasks.each do |task| %>
         <li>
           <%= link_to task do %>
-            <%= h(task.name) %><span class="right">(<%= task.level %>)</span>
+            <%= task.level %>-<%= h(task.name) %>
           <% end %>
         </li>
       <% end %>

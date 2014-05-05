@@ -1,6 +1,6 @@
-<%= form_for(@task) do |f| %>
+<%= form_for(@task, html: {"data-abid" => "data-abide"}) do |f| %>
   <% if @task.errors.any? %>
-    <div id="error_explanation">
+    <div class="alert-box alert">
       <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
 
       <ul>
@@ -13,23 +13,32 @@
 
   <div class="row">
     <div class="small-12 columns">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+      <%= f.label :name, "Name  <small>Required</small>".html_safe %>
+      <%= f.text_field :name, required: :required %>
+      <%# <small class="error">Name required</small> %>
+<% %>
     </div>
   </div>
   <div class="row">
     <div class="small-6 columns">
-      <%= label_tag :due_date %><%= text_field_tag :due_date, params[:due_date] ? params[:due_date] : nil, id: "task_due_date", name: "task[due_date]", placeholder: Date.today.strftime("%m/%d/%Y") %></div>
+      <%= f.label :due_date, "Due date <small>Required</small>".html_safe %>
+      <%= f.date_field :due, id: :task_due_date %>
+    </div>
     <div class="small-6 columns">
-      <%= label_tag :due_time %><%= text_field_tag :due_time, nil, id: "task_due_time", name: "task[due_time]", placeholder: "2:00pm" %></div>
-  </div>
-  <div class="row">
-    <div class="small-12 columns">
-    <%= f.label :level %>
-    <%= f.number_field :level, value: 1, min: 1, max: 5 %>
+      <%= f.label :due_time, "Due time".html_safe %>
+      <%= f.time_field :due, id: :task_due_time %>
     </div>
   </div>
   <div class="row">
-    <div class="small-12 columns"><%= f.submit class: "button" %></div>
+    <div class="small-10 columns">
+      <%= f.label :notes %>
+      <%= f.text_area :notes, rows: "5" %>
+    </div>
+    <div class="small-2 columns">
+      <%= f.label :level, "Level <small>Required</small>".html_safe %>
+      <%= f.number_field :level, value: 1, min: 1, max: 5 %><%# , required: :required, pattern: "[1-5]" %>
+      <%# <small class="error">Level required. 1-5</small> %>
+      <%= f.submit class: "button small" %>
+    </div>
   </div>
 <% end %>

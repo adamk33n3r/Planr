@@ -22,15 +22,14 @@ table#calendar {
   width: 100%;
   th {
     text-align: center;
-    #background-color: lighten(#FF0, 35%);
     background-color: $info-color;
   }
   th, td {
     padding: 10px;
     border: 2px solid #aaa;
-    &:hover {
-      background-color: #eee;
-    }
+  }
+  td:hover {
+    background-color: #eee;
   }
   tbody > tr {
     height: 150px;

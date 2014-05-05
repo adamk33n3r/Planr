@@ -2,6 +2,5 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-$ ->
-  console.log "adding datepicker"
-  $("#task_due_date").datepicker()
+#$ ->
+#  $("#task_due_date").datepicker()

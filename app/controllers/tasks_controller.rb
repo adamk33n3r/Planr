@@ -27,10 +27,11 @@ class TasksController < ApplicationController
   def create
     p = task_params
     #Time.zone = 'EST'
-    p[:due] = Time.strptime(p["due_date"]+" "+p["due_time"], "%m/%d/%Y %H:%M%p")
-    p.delete :due_date
-    p.delete :due_time
+    #due_date = p.delete :due_date
+    #due_time = p.delete :due_time
     @task = Task.new(p)
+    #due = Time.strptime(due_date+" "+due_time, "%m/%d/%Y %H:%M%p")
+    #@task.due = due
     @task.user = current_user
     
     respond_to do |format|
@@ -42,6 +43,9 @@ class TasksController < ApplicationController
         format.json { render json: @task.errors, status: :unprocessable_entity }
       end
     end
+  rescue ArgumentError
+    @task.errors.add(:due, "Invalid date or time")
+    render action: :new
   end
 
   # PATCH/PUT /tasks/1
@@ -76,6 +80,6 @@ class TasksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.require(:task).permit(:name, :level, :due_date, :due_time)
+      params.require(:task).permit(:name, :level, :due)
     end
 end
