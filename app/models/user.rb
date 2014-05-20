@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   after_create :skip_conf!
   
   validates :email, format: /@/
-  validates_presence_of :email, :password, :password_confirmation
+  validates_presence_of :email #, :password, :password_confirmation
   validates_uniqueness_of :email
 
   def skip_conf!

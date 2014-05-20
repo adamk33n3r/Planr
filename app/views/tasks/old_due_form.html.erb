@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="small-6 columns">
+      <%= label_tag :task_due_date, "Due date <small>Required</small>".html_safe %>
+      <%= text_field_tag :due_date, params[:due_date] ? params[:due_date] : nil, id: "task_due_date", name: "task[due_date]",
+          placeholder: Date.today.strftime("%m/%d/%Y"), required: :required, pattern: "month_day_year" %>
+      <small class="error">Date required. Format: [m]m/[d]d/yyyy</small>
+    </div>
+    <div class="small-6 columns">
+      <%= label_tag :task_due_time, "Due time <small>Required</small>".html_safe %>
+      <%= text_field_tag :due_time, nil, id: "task_due_time", name: "task[due_time]", placeholder: "2:00pm", required: :required, pattern: "\\d{1,2}:\\d{2}[ap]m" %>
+      <small class="error">Time required. Format: [h]h:mm(ap)m</small>
+    </div>
+  </div>

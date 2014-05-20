@@ -190,11 +190,13 @@ ul.unstyled, ol.unstyled {
   &:before{
     @include spinner($in-size, $in-band-size);
     -webkit-animation: halfspin 0.75s linear infinite reverse;
+    -moz-animation: halfspin 0.75s linear infinite reverse;
     animation: halfspin 0.75s linear infinite reverse;
   }
   &:after{
     @include spinner($out-size, $out-band-size);
     -webkit-animation: halfspin 0.75s linear infinite;
+    -moz-animation: halfspin 0.75s linear infinite;
     animation: halfspin 0.75s linear infinite;
   }
 }
@@ -202,6 +204,7 @@ ul.unstyled, ol.unstyled {
 @-webkit-keyframes halfspin {
   to {
     -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
     transform: rotate(180deg);
   }
 }

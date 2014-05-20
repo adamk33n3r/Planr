@@ -3,6 +3,17 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "foundation_overrides";
 
+#tasks-due {
+  > a {
+    color: #222;
+    div {
+      &:first-child { border-top: solid lightgrey 1px; }
+      &:hover { background-color: lightgrey; }
+      border-bottom: solid lightgrey 1px;
+    }
+  }
+}
+
 #date {
   text-align: center;
   font-weight: bold;
@@ -11,9 +22,7 @@
     display: inline-block;
     padding: 1rem 2rem 1rem 2rem;
   }
-  .button {
-    margin: 0;
-  }
+  .button { margin: 0; }
 }
 
 table#calendar {
@@ -28,9 +37,7 @@ table#calendar {
     padding: 10px;
     border: 2px solid #aaa;
   }
-  td:hover {
-    background-color: #eee;
-  }
+  td:hover { background-color: #eee; }
   tbody > tr {
     height: 150px;
     td {
@@ -54,22 +61,14 @@ table#calendar {
             display: block;
             color: #222;
           }
-          &:first-child {
-            border:none;
-          }
-          &:last-child {
-            border-bottom: 1px solid #888;
-          }
+          &:first-child { border:none; }
+          &:last-child { border-bottom: 1px solid #888; }
         }
       }
-      &.notmonth {
-        opacity: .5;
-      }
+      &.notmonth { opacity: .5; }
       &.today {
         background-color: lighten(#FF0, 35%);
-        &:hover {
-          background-color: lighten(#FF0, 25%);
-        }
+        &:hover { background-color: lighten(#FF0, 25%); }
       }
     }
   }

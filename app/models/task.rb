@@ -15,4 +15,8 @@ class Task < ActiveRecord::Base
   def validate
     errors.add(:due, "is invalid") if @due_invalid
   end
+  
+  def to_s
+    self.name
+  end
 end

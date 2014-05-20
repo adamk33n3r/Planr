@@ -11,6 +11,7 @@ Planr::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
   get '/schedule' => 'schedule#index'
   get '/schedule/:year(/:month)' => 'schedule#index', as: :schedule_filter
+  get '/schedule/:year/:month/:day' => 'schedule#show'
   resources :tasks
 
   # You can have the root of your site routed with "root"

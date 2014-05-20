@@ -1,0 +1,23 @@
+Tasks due:
+<ul id="tasks-due" class="unstyled">
+  <% @tasks_due.each do |task| %>
+  <li><%= task.due.strftime("%I:%M") %>&mdash;<%= task %></li>
+  <% end %>
+</ul>
+<div id="tasks-due">
+  <% @tasks_due.each do |task| %>
+  <%= link_to task_path(task) do %>
+  <div class="row">
+    <div class="small-2 column text-right"><%= task.due.strftime("%l:%M") %></div>
+    <div class="small-10 columns text-center"><%= task %></div>
+  </div>
+  <% end %>
+  <% end %>
+</div>
+<br/>
+Tasks to work on:
+<ul>
+  <% @tasks_to_work_on.each do |task| %>
+    <li><%= task %></li>
+  <% end %>
+</ul>
