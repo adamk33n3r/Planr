@@ -23,13 +23,12 @@
             <li class="has-dropdown">
               <a href="#"><%= current_user %></a>
               <ul class="dropdown">
-                <li><%= link_to "Account", edit_user_registration_path %></li>
+                <li><%= link_to "Account" %></li>
                 <li><%= link_to "Logout", logout_path, method: :delete %></li>
               </ul>
             </li>
           <% else %>
-            <li><%= link_to "Register", new_user_registration_path %></li>
-            <li><%= link_to "Login", login_path %></li>
+            <li><%= link_to "Login", login_path, data: { no_turbolink: true } %></li>
           <% end %>
         </ul>
     
@@ -48,6 +47,7 @@
     <% if alert %>
       <div data-alert class="alert-box danger"><%= alert %><a href="#" class="close">&times;</a></div>
     <% end %>
+    
     <%= yield %>
   </div>
   <div class="loading-indicator"></div>

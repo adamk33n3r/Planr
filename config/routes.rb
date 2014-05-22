@@ -1,14 +1,14 @@
 Planr::Application.routes.draw do
-  devise_for :admin_users, ActiveAdmin::Devise.config
+  #devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }, path_names: { sign_in: 'login', sign_out: 'logout'}
-  as :user do
-    get "/login" => "devise/sessions#new"
-    delete "/logout" => "devise/sessions#destroy"
-    #get "/logout" => "devise/sessions#destroy"
-  end
+  #devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }, path_names: { sign_in: 'login', sign_out: 'logout'}
+  #as :user do
+  delete "/logout" => "sessions#destroy", as: :logout
+  get "/auth/:provider/callback" => "sessions#create"
+  #end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
+  resources :users
   get '/schedule' => 'schedule#index'
   get '/schedule/:year(/:month)' => 'schedule#index', as: :schedule_filter
   get '/schedule/:year/:month/:day' => 'schedule#show'

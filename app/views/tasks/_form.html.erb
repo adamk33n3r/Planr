@@ -26,7 +26,7 @@
     </div>
     <div class="small-6 columns">
       <%= f.label :due_time, "Due time <small>Required</small>".html_safe %>
-      <%= f.time_select :due, id: :task_due_time %>
+      <%= f.time_select :due, id: :task_due_time, ignore_date: true %>
     </div>
   </div>
   <div class="row">

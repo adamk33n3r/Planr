@@ -4,8 +4,9 @@ ruby '2.1.1'
 gem 'watu_table_builder', :require => 'table_builder'
 gem 'time_zone_ext'
 
-gem 'devise', '3.2'
+gem 'omniauth'
 gem 'omniauth-google-oauth2'
+gem 'google-api-client', :require => 'google/api_client'
 
 gem 'activeadmin', github: 'gregbell/active_admin'
 

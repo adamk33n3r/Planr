@@ -26,6 +26,7 @@ class TasksController < ApplicationController
   # POST /tasks.json
   def create
     p = task_params
+    puts p
     #Time.zone = 'EST'
     #due_date = p.delete :due_date
     #due_time = p.delete :due_time
