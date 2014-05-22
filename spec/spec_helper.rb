@@ -42,7 +42,18 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = "random"
   
-  config.include FactoryGirl::Syntax::Methods
+  #config.include FactoryGirl::Syntax::Methods
   config.include Mailer
   config.before(:each) { reset_email }
+  config.include IntegrationSpecHelper, :type => :feature
 end
+
+Capybara.default_host = 'http://example.org'
+
+OmniAuth.config.test_mode = true
+OmniAuth.config.add_mock(:google, {
+  :uid => '123456789',
+  :provider => 'google',
+  info: { :name => "Frederick Baufhoussen", :email => 'zapnap@email.com' },
+  credentials: { token: "2ds1f54sdafg651sdg41f2h1sdfg512d31afd65f" },
+})

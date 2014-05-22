@@ -1,7 +1,9 @@
 require 'spec_helper'
 describe "Month Cycles" do
   before do
-    login FactoryGirl.create(:user)
+    user = FactoryGirl.create(:user)
+    #puts user.to_json
+    login user
     visit schedule_path
   end
   it "should be current month" do
